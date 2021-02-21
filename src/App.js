@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Button from './Button.js'
+import useColorSwitch from './useColorSwitch';
 
 function App() {
+  const [color, handleClick] = useColorSwitch();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Button label="按钮" handleClick = {handleClick}>
+        <span>&gt;</span>
+      </Button>
+      <p style={{ color }}>这是一段文本</p>
     </div>
   );
 }
