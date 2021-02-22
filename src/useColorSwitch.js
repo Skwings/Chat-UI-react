@@ -1,11 +1,10 @@
 import React from 'react'
 
-function useColorSwitch(){
-    const [color, setColor] = React.useState('#ff0000')
+function useColorSwitch(defaultColor, newColor){
+    const [color, setColor] = React.useState(defaultColor)
 
     const handleClick = () => {
-      console.log('点击事件  ');
-      setColor('#00ff00')
+      setColor(newColor)
     }
 
     return [color, handleClick]

@@ -1,12 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 
-function Button(props) {
+const StyledButton = styled.div`   //tagged templete literals
+    width: ${(props) => props.width || "80px"};
+    background-color: ${({ theme }) => theme.primaryColor };
+`
+
+function Button({ width, handleClick, label, children }) {
     return (
         <div>
-            <button onClick={props.handleClick}>
-                {props.label}
-                {props.children}
-            </button>
+            <StyledButton width={width} onClick={handleClick}>
+                {label}
+                {children}
+            </StyledButton>
         </div>
 
     )

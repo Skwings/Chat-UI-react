@@ -4,7 +4,7 @@ import Button from './Button.js'
 import useColorSwitch from './useColorSwitch';
 
 function App() {
-  const [color, handleClick] = useColorSwitch();
+  const [color, handleClick] = useColorSwitch('red', 'black');
 
   return (
     <div>
