@@ -1,4 +1,15 @@
 import styled from 'styled-components';
+import { css } from 'styled-components';
+
+const circleMixinFunc = (color, size='8px') => css`
+    content: "";
+        position: absolute;
+        display: block;
+        width: ${size};
+        height: ${size};
+        border-radius: 50%;
+        background-color: ${color};
+`
 
 const StyledAvatar = styled.div`
     position: relative;
@@ -10,21 +21,25 @@ const StatusIcon = styled.div`
     top: 4px;
 
     &::before{
-        content: "";
-        display: block;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background-color: white;
+        ${({size}) => {
+            return circleMixinFunc("white", size)
+        }} 
+        transform: scale(2);
     }
     &::after{
-
+        ${({ theme, status, size }) => {
+            if(status === "online"){
+               return circleMixinFunc(theme.green, size)
+            }else if(status === "offline"){
+               return circleMixinFunc(theme.gray, size)
+            }
+        }};
     }
 `;
 
 const AvatarClip = styled.div`
-    width: 48px;
-    height: 48px;
+    width: ${({size}) => size};
+    height: ${({size}) => size};
     border-radius: 50%;
     overflow: hidden; 
 `;
@@ -36,5 +51,5 @@ const AvatarImg = styled.img`
     object-position: center;
 `;
 
-export {StyledAvatar, StatusIcon, AvatarClip, AvatarImg}
+export { StyledAvatar, StatusIcon, AvatarClip, AvatarImg }
 
