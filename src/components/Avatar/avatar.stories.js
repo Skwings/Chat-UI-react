@@ -15,6 +15,7 @@ export const Default = () => {
     return <Avatar src={face1} />
 }
 
+//头像组件大小配置
 export const Sizes = () => {
   return <div className='row-elements'>
     <Avatar src={face1} size="48px" />
@@ -24,6 +25,7 @@ export const Sizes = () => {
   </div>
 }
 
+//头像组件状态配置
 export const WithStatus = () => {
   return <div className='row-elements'>
     <Avatar src={face1} status="online" />

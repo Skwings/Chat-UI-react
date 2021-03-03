@@ -1,14 +1,11 @@
-import styled from 'styled-components';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
+import { circle } from 'utils/mixins'
 
-const circleMixinFunc = (color, size='8px') => css`
+const circleMixinFunc = (color, size = '8px') => css`
     content: "";
-        position: absolute;
-        display: block;
-        width: ${size};
-        height: ${size};
-        border-radius: 50%;
-        background-color: ${color};
+    position: absolute;
+    display: block;
+    ${ circle(color, size) };
 `
 
 const StyledAvatar = styled.div`
@@ -21,25 +18,25 @@ const StatusIcon = styled.div`
     top: 4px;
 
     &::before{
-        ${({size}) => {
-            return circleMixinFunc("white", size)
-        }} 
+        ${({ size }) => {
+        return circleMixinFunc("white", size)
+    }} 
         transform: scale(2);
     }
     &::after{
         ${({ theme, status, size }) => {
-            if(status === "online"){
-               return circleMixinFunc(theme.green, size)
-            }else if(status === "offline"){
-               return circleMixinFunc(theme.gray, size)
-            }
-        }};
+        if (status === "online") {
+            return circleMixinFunc(theme.green, size)
+        } else if (status === "offline") {
+            return circleMixinFunc(theme.gray, size)
+        }
+    }};
     }
 `;
 
 const AvatarClip = styled.div`
-    width: ${({size}) => size};
-    height: ${({size}) => size};
+    width: ${({ size }) => size};
+    height: ${({ size }) => size};
     border-radius: 50%;
     overflow: hidden; 
 `;
