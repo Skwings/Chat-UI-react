@@ -6,20 +6,19 @@ import Avatar from 'components/Avatar';
 import "styled-components/macro"
 
 import profileImage from 'assets/images/face-male-1.jpg'
-import { faCommentDots, faUsers, faStickyNote, faEllipsisH, faCog} from '@fortawesome/free-solid-svg-icons'
+import { faCommentDots, faFolder, faUsers, faStickyNote, faEllipsisH, faCog} from '@fortawesome/free-solid-svg-icons'
 
 /** 
  * 侧导航组件
- * @param {String} url [请求地址]
- * @param {Object} params [请求携带的参数]
  * */ 
 function NavBar({ children, ...rest }){
     return (
         <StyledNavBar {...rest}>
             <Avatar src={profileImage} status="online" />
             <MenuItems>
-                <MenuItem showBadge active icon={faCommentDots} />
+                <MenuItem showBadge active="true" icon={faCommentDots} />
                 <MenuItem icon={faUsers} />
+                <MenuItem icon={faFolder} />
                 <MenuItem icon={faStickyNote} />
                 <MenuItem icon={faEllipsisH} />
                 <MenuItem icon={faCog} css={`align-self:end;`} />
