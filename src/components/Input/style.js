@@ -1,15 +1,24 @@
 import styled from 'styled-components';
 
-const StyledInput = styled.div`
-
+const StyledInput = styled.input`
+    width: 100%;
+    height: 48px;
+    border: none;
+    background: none;
+    color: ${({theme}) => theme.grayDark};
+    font-size: ${({theme}) => theme.medium};
+    display: block;
+    &::placeholder{
+        color: ${({theme}) => theme.gray3};
+    }
 `
 
 const Prefix = styled.div`
-
+    padding-right: 16px;
 `
 
 const Suffix = styled.div`
-
+    padding-left: 16px;
 `
 
 const InputContainer = styled.div`

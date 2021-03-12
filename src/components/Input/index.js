@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledInput, Prefix, Suffix, InputContainer } from './style';
+import Icon from 'components/Icon';
+
+import { ReactComponent as SearchIcon } from 'assets/icons/search.svg'
+import { useTheme } from 'styled-components';
 
 /** 
  * 搜索框组件
@@ -17,6 +21,22 @@ function Input({ placeholder = "请输入内容...", prefix, suffix, ...rest }) 
         </InputContainer>
     );
 };
+
+function Search({ placeholder="请输入搜索内容", prefix, suffix, ...rest }) {
+    const theme = useTheme;
+    return (
+        <Input 
+            placeholder={placeholder} 
+            prefix={<Icon icon={SearchIcon} 
+                color={theme.gray3} 
+                height={18} 
+                width={18} 
+            />} {...rest}>
+        </Input>
+    )
+}
+
+Input.Search = Search;
 
 Input.propTypes = {
     placeholder: PropTypes.string,

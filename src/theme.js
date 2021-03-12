@@ -8,6 +8,12 @@ export default {
     gray3: "rgba(24, 28, 47, 0.3)",
     grayDark: "#181C2F",
 
+    xxsmall: '0.8rem',
+    xsmall: '1rem',
+    small: '1.2rem',
     normal: '1.4rem',
-    mediun: "1.6rem"
+    mediun: "1.6rem",
+    large: '1.8rem',
+    xlarge: '2rem',
+    xxlarge: '2.4rem',
 }
