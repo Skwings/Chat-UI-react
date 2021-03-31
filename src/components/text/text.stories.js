@@ -1,11 +1,11 @@
 import React from 'react';
-import text from '.'
+import Text from '.'
 
 export default {
-  title: "text",
-  component: text,
+  title: "Text",
+  component: Text,
 };
 
 export const Default = () => {
-    return <text />
+    return <Text />
 }

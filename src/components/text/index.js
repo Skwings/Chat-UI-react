@@ -1,21 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Styledtext from './style';
+import StyledText from './style';
 
-function text({ children, ...rest }){
+function Text({ children, type, size, bold, ...rest }) {
     return (
-        <Styledtext {...rest}>
+        <StyledText {...rest}>
             {children}
-        </Styledtext>
+        </StyledText>
     );
 };
 
-text.propTypes = {
-    children: PropTypes.any
+Text.propTypes = {
+    children: PropTypes.any,
+    type: PropTypes.oneOf(["primary", "secondary", "danger"]),
+    size: PropTypes.oneOf([
+        "xxsmall",
+        "xsmall",
+        "small",
+        "normal",
+        "medium",
+        "large",
+        "xlarge",
+        "xxlarge",
+    ]),
+    bold: PropTypes.bool
 };
 
 
-export default text;
+export default Text;
 
 
 

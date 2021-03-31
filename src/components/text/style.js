@@ -1,6 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Styledtext = styled.div``
+const typeVariants = {
+    primary: css`
+        color: ${({theme}) => theme.grayDark};
+    ` ,
+    secondary: css`
+        color: ${({theme}) => theme.grayDark};
+        opacity: 0.3;
+    `,
+    danger: css`
+        color: ${({theme}) => theme.red};
+    `
+}
 
-export default Styledtext
+const StyledText = styled.div``
+
+export default StyledText
 
